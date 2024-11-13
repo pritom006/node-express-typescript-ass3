@@ -1,0 +1,49 @@
+{
+  "hotel_id": "h0f7",
+  "slug": "oceanfront-paradise-retreat",
+  "images": [
+    "/images/1731477039302-15505326.jpg",
+    "/images/1731477039303-54606626.jpg"
+  ],
+  "title": "Oceanfront Paradise Retreat Update",
+  "description": "An exclusive hideaway on the coast, featuring panoramic ocean views and luxury amenities for a perfect getaway.",
+  "guest_count": 8,
+  "bedroom_count": 4,
+  "bathroom_count": 3,
+  "amenities": [
+    "High-Speed Internet",
+    "Infinity Pool",
+    "Beach Access",
+    "Outdoor Fireplace",
+    "Private Chef"
+  ],
+  "host_information": {
+    "name": "Sophia Williams",
+    "contact": "4455667788"
+  },
+  "address": "456 Ocean Breeze Ave",
+  "latitude": 36.7783,
+  "longitude": -119.4179,
+  "rooms": [
+    {
+      "room_title": "Seaside Master Suite",
+      "room_image": "/images/indoor.jpeg",
+      "bedroom_count": "1"
+    },
+    {
+      "room_title": "Ocean View Guest Room",
+      "room_image": "/images/outdor.jpg",
+      "bedroom_count": "1"
+    },
+    {
+      "room_title": "Luxury Family Suite",
+      "room_image": "/images/family.jpg",
+      "bedroom_count": "2"
+    },
+    {
+      "room_title": "Garden View Studio",
+      "room_image": "/images/ocean-view-room.jpg",
+      "bedroom_count": "1"
+    }
+  ]
+}
