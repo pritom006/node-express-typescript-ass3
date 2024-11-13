@@ -287,7 +287,7 @@ The hotel details should appear as a json file.
 #### Postman Instructions:
 1. **Open Postman** and create a new request.
 2. **Select GET** as the HTTP method.
-3. **Enter the URL**: `http://localhost:3000/hotel/{hotelId}`. (Replace `{hotelId}` with the actual hotel ID. Example: `http://localhost:8080/hotel/h0f7`).
+3. **Enter the URL**: `http://localhost:8080/hotel/{hotelId}`. (Replace `{hotelId}` with the actual hotel ID. Example: `http://localhost:8080/hotel/h0f7`).
 4. **Send** the Request and view the response.
 The hotel details should appear as a json file.
 
@@ -297,7 +297,7 @@ The hotel details should appear as a json file.
 
 #### cURL Command:
 ```bash
-curl -X PUT http://localhost:3000/hotel/{hotel-id} \
+curl -X PUT http://localhost:8080/hotel/{hotel-id} \
 -H "Content-Type: application/json" \
 -d '{
     "title": "Oceanfront Paradise Retreat Updated",
