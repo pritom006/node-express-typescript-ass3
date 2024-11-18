@@ -1,0 +1,47 @@
+{
+  "hotel_id": "h385",
+  "slug": "mountain-escape-lodge",
+  "images": [],
+  "title": "Mountain Escape Lodge",
+  "description": "A serene retreat nestled in the mountains, offering breathtaking views, cozy accommodations, and outdoor adventures.",
+  "guest_count": 6,
+  "bedroom_count": 3,
+  "bathroom_count": 2,
+  "amenities": [
+    "Free Wi-Fi",
+    "Firepit",
+    "Hot Tub",
+    "Mountain Biking Trails",
+    "Fully Equipped Kitchen"
+  ],
+  "host_information": {
+    "name": "Ethan Carter",
+    "contact": "2233445566"
+  },
+  "address": "789 Summit Ridge Rd",
+  "latitude": 39.5501,
+  "longitude": -105.7821,
+  "rooms": [
+    {
+      "hotel_slug": "mountain-escape-lodge",
+      "room_slug": "",
+      "room_image": "/images/master-suite.jpg",
+      "room_title": "",
+      "bedroom_count": 1
+    },
+    {
+      "hotel_slug": "mountain-escape-lodge",
+      "room_slug": "cozy-guest-room",
+      "room_image": "/images/guest-room.jpg",
+      "room_title": "Cozy Guest Room",
+      "bedroom_count": 1
+    },
+    {
+      "hotel_slug": "mountain-escape-lodge",
+      "room_slug": "spacious-family-room",
+      "room_image": "/images/family-room.jpg",
+      "room_title": "Spacious Family Room",
+      "bedroom_count": 1
+    }
+  ]
+}

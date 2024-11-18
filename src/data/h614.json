@@ -1,10 +1,7 @@
 {
-  "hotel_id": "h0f7",
+  "hotel_id": "h614",
   "slug": "oceanfront-paradise-retreat-update",
-  "images": [
-    "/images/1731477039302-15505326.jpg",
-    "/images/1731477039303-54606626.jpg"
-  ],
+  "images": [],
   "title": "Oceanfront Paradise Retreat Update",
   "description": "An exclusive hideaway on the coast, featuring panoramic ocean views and luxury amenities for a perfect getaway.",
   "guest_count": 8,
@@ -26,32 +23,32 @@
   "longitude": -119.4179,
   "rooms": [
     {
-      "room_title": "Seaside Master Suite",
+      "hotel_slug": "oceanfront-paradise-retreat-update",
+      "room_slug": "seaside-master-suite",
       "room_image": "/images/indoor.jpeg",
-      "bedroom_count": "1",
-      "hotel_slug": "oceanfront-paradise-retreat-update",
-      "room_slug": "seaside-master-suite"
+      "room_title": "Seaside Master Suite",
+      "bedroom_count": 1
     },
     {
-      "room_title": "Ocean View Guest Room",
+      "hotel_slug": "oceanfront-paradise-retreat-update",
+      "room_slug": "ocean-view-guest-room",
       "room_image": "/images/outdor.jpg",
-      "bedroom_count": "1",
-      "hotel_slug": "oceanfront-paradise-retreat-update",
-      "room_slug": "ocean-view-guest-room"
+      "room_title": "Ocean View Guest Room",
+      "bedroom_count": 1
     },
     {
-      "room_title": "Luxury Family Suite",
+      "hotel_slug": "oceanfront-paradise-retreat-update",
+      "room_slug": "luxury-family-suite",
       "room_image": "/images/family.jpg",
-      "bedroom_count": "2",
-      "hotel_slug": "oceanfront-paradise-retreat-update",
-      "room_slug": "luxury-family-suite"
+      "room_title": "Luxury Family Suite",
+      "bedroom_count": 2
     },
     {
-      "room_title": "Garden View Studio",
-      "room_image": "/images/ocean-view-room.jpg",
-      "bedroom_count": "1",
       "hotel_slug": "oceanfront-paradise-retreat-update",
-      "room_slug": "garden-view-studio"
+      "room_slug": "garden-view-studio",
+      "room_image": "/images/ocean-view-room.jpg",
+      "room_title": "Garden View Studio",
+      "bedroom_count": 1
     }
   ]
 }

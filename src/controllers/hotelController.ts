@@ -10,7 +10,11 @@ const generateHotelId = (): string => "h" + uuidv4().slice(0, 3);
 export const createHotel = (req: Request, res: Response): void => {
     try {
       const { title, description, guest_count, bedroom_count, bathroom_count, amenities, host_information, address, latitude, longitude, rooms } = req.body;
-  
+      
+      if (!title || !description || !guest_count || !bedroom_count || !bathroom_count || !amenities || !host_information || !address) {
+        res.status(400).json({ error: "Missing required fields" });
+      }
+
       const hotelId = generateHotelId();
       const slug = slugify(title, { lower: true, strict: true });
       const images = req.files ? (req.files as Express.Multer.File[]).map(file => `/images/${file.filename}`) : [];
@@ -65,7 +69,7 @@ export const createHotel = (req: Request, res: Response): void => {
       res.status(500).json({ error: "Error creating hotel: " + error.message });
     }
   };
-  
+
 
 // Upload images and update hotel record
 
@@ -143,6 +147,14 @@ export const getHotel = async (req: Request, res: Response): Promise<void> => {
 
     // Read and parse the hotel data from the JSON file
     const hotelData = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+
+    // Ensure the room data includes `hotel_slug` and `room_slug`
+    const hotelSlug = hotelData.slug;
+    hotelData.rooms = hotelData.rooms.map((room: any) => ({
+      ...room,
+      hotel_slug: hotelSlug,
+      room_slug: slugify(room.room_title, { lower: true, strict: true })
+    }));
     res.status(200).json(hotelData);
   } catch (error: any) {
     console.error("Error retrieving hotel:", error.message); // Log error details
@@ -150,6 +162,46 @@ export const getHotel = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
+export const getHotels = async (req: Request, res: Response): Promise<void> => {
+  try {
+    // Use __dirname to construct an absolute path to the data directory
+    const dataDirectory = path.join(__dirname, "../data");
+
+    // Read all JSON files in the data directory
+    const hotelFiles = fs.readdirSync(dataDirectory)
+      .filter(file => file.endsWith('.json') && file.startsWith('h'));
+
+    // Read and parse each hotel file, skipping any invalid files
+    const hotels = hotelFiles.reduce((validHotels, file) => {
+      try {
+        const filePath = path.join(dataDirectory, file);
+        const fileContent = fs.readFileSync(filePath, "utf-8").trim();
+        
+        // Skip empty files
+        if (!fileContent) {
+          console.warn(`Skipping empty file: ${file}`);
+          return validHotels;
+        }
+
+        const hotelData = JSON.parse(fileContent);
+        validHotels.push(hotelData);
+      } catch (parseError) {
+        console.error(`Error parsing file ${file}:`, parseError);
+      }
+      return validHotels;
+    }, [] as any[]);
+
+    if (hotels.length === 0) {
+      res.status(404).json({ message: "No hotels found" });
+      return;
+    }
+
+    res.status(200).json(hotels);
+  } catch (error: any) {
+    console.error("Error retrieving hotels:", error.message);
+    res.status(500).json({ error: "Error retrieving hotels: " + error.message });
+  }
+};
 
 // Update hotel by ID
 
@@ -186,6 +238,16 @@ export const updateHotel = async (req: Request, res: Response): Promise<void> =>
       rooms: Array.isArray(updatedData.rooms) ? updatedData.rooms : hotelData.rooms
     };
 
+    // Ensure `hotel_slug` is updated based on the updated hotel title
+    updatedHotel.slug = slugify(updatedHotel.title, { lower: true, strict: true });
+
+    // Update each room to include `hotel_slug` and generate `room_slug` if room titles are present
+    updatedHotel.rooms = updatedHotel.rooms.map((room: any) => ({
+      ...room,
+      hotel_slug: updatedHotel.slug,
+      room_slug: slugify(room.room_title, { lower: true, strict: true }),
+    }));
+
     // Save updated data to the JSON file
     fs.writeFileSync(filePath, JSON.stringify(updatedHotel, null, 2));
 
@@ -201,5 +263,6 @@ export default {
   createHotel,
   uploadImages,
   getHotel,
+  getHotels,
   updateHotel
 };
