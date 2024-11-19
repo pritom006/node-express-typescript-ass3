@@ -164,7 +164,6 @@ export const getHotel = async (req: Request, res: Response): Promise<void> => {
 
 export const getHotels = async (req: Request, res: Response): Promise<void> => {
   try {
-    // Use __dirname to construct an absolute path to the data directory
     const dataDirectory = path.join(__dirname, "../data");
 
     // Read all JSON files in the data directory
@@ -177,7 +176,6 @@ export const getHotels = async (req: Request, res: Response): Promise<void> => {
         const filePath = path.join(dataDirectory, file);
         const fileContent = fs.readFileSync(filePath, "utf-8").trim();
         
-        // Skip empty files
         if (!fileContent) {
           console.warn(`Skipping empty file: ${file}`);
           return validHotels;

@@ -2,7 +2,8 @@
   "hotel_id": "hfd5",
   "slug": "sample-hotel",
   "images": [
-    "/images/1731478238819-678823358.jpg"
+    "/images/1731478238819-678823358.jpg",
+    "/images/1731993550585-462058405.jpg"
   ],
   "title": "Updated Sample Hotel",
   "description": "A sample hotel for testing",

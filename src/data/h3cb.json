@@ -1,7 +1,10 @@
 {
   "hotel_id": "h3cb",
   "slug": "mountain-escape-lodge",
-  "images": [],
+  "images": [
+    "/images/1731993123083-887116134.jpg",
+    "/images/1731993123083-334931158.jpg"
+  ],
   "title": "Mountain Escape Lodge",
   "description": "A serene retreat nestled in the mountains, offering breathtaking views, cozy accommodations, and outdoor adventures.",
   "guest_count": 6,

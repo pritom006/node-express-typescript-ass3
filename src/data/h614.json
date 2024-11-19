@@ -1,7 +1,10 @@
 {
   "hotel_id": "h614",
   "slug": "oceanfront-paradise-retreat-update",
-  "images": [],
+  "images": [
+    "/images/1731993358361-813277307.jpg",
+    "/images/1731993358362-494696145.jpg"
+  ],
   "title": "Oceanfront Paradise Retreat Update",
   "description": "An exclusive hideaway on the coast, featuring panoramic ocean views and luxury amenities for a perfect getaway.",
   "guest_count": 8,
