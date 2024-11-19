@@ -18,8 +18,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
 app.use("/", hotelRoutes);
-app.use("/images", express.static(path.join(__dirname, "../data/images")));
-console.log("Serving images from:", path.join(__dirname, "../data/images"));
+app.use("/images", express.static(path.join(__dirname, "data/images")));
+console.log("Serving images from:", path.join(__dirname, "data/images"));
 app.use((req: Request, res: Response) => {
   res.status(404).json({ message: "Route not found" });
 });
